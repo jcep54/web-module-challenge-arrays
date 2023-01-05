@@ -44,7 +44,7 @@ Inside of your second terminal type `npm start`
 You will be running your tests in one terminal and debugging in the other. As you work on your code you should make use of `console.log` to check your progress and debug.
 ![alt text](assets/tests_debug_terminal_final.png "your terminal should look like this")
 
-
+ 
 ### Task 3: Stretch
 
 There are several stretch goals inside `index.js`. You may work on these once you have finished MVP requirements for the day!

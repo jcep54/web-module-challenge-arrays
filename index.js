@@ -46,9 +46,15 @@ Use the copy function below to do the following:
 */
 
 
-function copy(/*your code here*/){
-  /*your code here*/
+ function copy(list){
+  const newList = [];
+  for (let i = 0; i < list.length; i++){
+    newList.push(list[i]);
+  }
+  return newList
 }
+const flavorsCopy = (copy(originalFlavors));
+//console.log(flavorsCopy);
 
 
 
@@ -63,10 +69,10 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-  /*your code here*/
+function is31Flavors(testArray){
+  return testArray.length === 31
  }
-
+console.log(is31Flavors(flavorsCopy))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -82,10 +88,11 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-  /*your code here*/
+function addFlavor(flavorArray,addedFlavor){
+  flavorArray.unshift(addedFlavor);
+  return flavorArray;
  }
-
+console.log(addFlavor(flavorsCopy,'Rainbow Sherbert').length)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -100,10 +107,11 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(flavorList){
+ flavorList.pop();
+ return flavorList;
 }
-
+console.log(removeLastFlavor(flavorsCopy).length)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -118,11 +126,15 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(flavArray,indexCheck){
+  if (indexCheck < 0 || indexCheck > 31){
+    return console.log('index out of range. try again');
+  }else{
+  return flavArray[indexCheck];
+  }
 }
 
-
+console.log(getFlavorByIndex(flavorsCopy,9))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that single flavor from the array.  
@@ -138,10 +150,12 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(flavArray, kickedFlavor){
+  
+  flavArray.splice(flavArray.indexOf(kickedFlavor),1);
+  return flavArray;
 }
-
+removeFlavorByName(flavorsCopy,'Rocky Road')
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -163,10 +177,17 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(array, filter){
+    const newArray = [];
+  for (let i = 0; i < array.length; i++){
+    if (array[i].includes(filter)){
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
 }
-
+filterByWord(flavorsCopy,'Chocolate');
+console.log('test 7',filterByWord(flavorsCopy,'Mint'))
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
